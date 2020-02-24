@@ -111,8 +111,8 @@ loopCount = 0
 # Publish to the same topic in a loop
 while loopCount < 500:
 	print loopCount
-	print("power mod is {0}".format(power_mod))
-	sys.stdout.flush()
+	#print"Listening loop: " + str(loopCount))
+	#sys.stdout.flush()
 	loopCount += 1
 	time.sleep(10)
 print "This is it!!"

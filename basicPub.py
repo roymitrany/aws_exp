@@ -16,7 +16,6 @@
  '''
 
 from AWSIoTPythonSDK.MQTTLib import AWSIoTMQTTClient
-from random import randint
 import sys
 import time
 import getopt
@@ -79,18 +78,19 @@ myAWSIoTMQTTClient.configureMQTTOperationTimeout(5)  # 5 sec
 # Connect to AWS IoT
 myAWSIoTMQTTClient.connect()
 
-# Publish to the same topic in a loop forever
-loopCount = 0
-while True:
-	data = {}
-	data['id'] = str(1)
-	data['timestamp'] = str(time.time())
-	data['info'] = {}
-	data['info']['temp'] = str(loopCount)
-	data['info']['humidity'] = randint(0,99)
-	json_data = json.dumps(data)
-	print(json_data)
+# Publish a JSON 
+try:
+        data = {}
+        data['id'] = str(31405238)
+        data['timestamp'] = str(int(time.time()))
+        data['info'] = {}
+        data['info']['first'] = "Ahmad"
+        data['info']['last'] = "Kustinski"
+        json_data = json.dumps(data)
+        print(json_data)
 	
-	myAWSIoTMQTTClient.publish("nssl/test/Pub", json_data, 1)
-	loopCount += 1
-	time.sleep(3)
+        myAWSIoTMQTTClient.publish("nssl/test/Pub", json_data, 1)
+except:
+        print ("Error: ", sys.exc_info()[0])
+
+
