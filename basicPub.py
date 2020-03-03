@@ -81,8 +81,8 @@ myAWSIoTMQTTClient.connect()
 # Publish a JSON 
 try:
         data = {}
+        data['timestamp'] = int(time.time())
         data['id'] = str(31405238)
-        data['timestamp'] = str(int(time.time()))
         data['info'] = {}
         data['info']['first'] = "Ahmad"
         data['info']['last'] = "Kustinski"

@@ -44,6 +44,7 @@ def customCallback(client, userdata, message):
         for dev in list_of_bt:
                 print ("dev addr is: " + dev['mac_address'])
 	
+#-------------------------------------------------------------------------
 
 # Read in command-line parameters
 useWebsocket = False
@@ -103,16 +104,16 @@ myAWSIoTMQTTClient.configureDrainingFrequency(2)  # Draining: 2 Hz
 myAWSIoTMQTTClient.configureConnectDisconnectTimeout(10)  # 10 sec
 myAWSIoTMQTTClient.configureMQTTOperationTimeout(5)  # 5 sec
 
+#-------------------------------------------------------------------------------
+
 # Connect and subscribe to AWS IoT
 myAWSIoTMQTTClient.connect()
 myAWSIoTMQTTClient.subscribe("nssl/device/dev1", 1, customCallback)
 
 loopCount = 0
-# Publish to the same topic in a loop
+# Just loop to show that the script is alive
 while loopCount < 500:
 	print loopCount
-	#print"Listening loop: " + str(loopCount))
-	#sys.stdout.flush()
 	loopCount += 1
 	time.sleep(10)
 print "This is it!!"
