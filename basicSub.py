@@ -113,7 +113,7 @@ myAWSIoTMQTTClient.subscribe("nssl/device/dev1", 1, customCallback)
 loopCount = 0
 # Just loop to show that the script is alive
 while loopCount < 500:
-	print loopCount
+	print (loopCount)
 	loopCount += 1
 	time.sleep(10)
 print("This is it!!")
