@@ -35,14 +35,14 @@ def customCallback(client, userdata, message):
 	print("from topic: ")
 	print(message.topic)
 	print("--------------\n\n")
-        bl.start_scan()
-        print("Scanning for 5 seconds...")
-        for i in range(0, 5):
-                print(i)
-                time.sleep(1)
-        list_of_bt = bl.get_available_devices()
-        for dev in list_of_bt:
-                print ("dev addr is: " + dev['mac_address'])
+	bl.start_scan()
+	print("Scanning for 5 seconds...")
+	for i in range(0, 5):
+		print(i)
+		time.sleep(1)
+	list_of_bt = bl.get_available_devices()
+	for dev in list_of_bt:
+		print ("dev addr is: " + dev['mac_address'])
 	
 #-------------------------------------------------------------------------
 
@@ -116,7 +116,7 @@ while loopCount < 500:
 	print loopCount
 	loopCount += 1
 	time.sleep(10)
-print "This is it!!"
+print("This is it!!")
 exit(0)
 
 
