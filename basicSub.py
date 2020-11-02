@@ -21,7 +21,7 @@ import logging
 import time
 import getopt
 import json
-from bluetoothctl import Bluetoothctl 
+from vm_bt_mock import Bluetoothctl 
 
 power_mod = 1
 bl = Bluetoothctl()
